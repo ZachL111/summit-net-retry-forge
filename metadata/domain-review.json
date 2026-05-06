@@ -1,0 +1,73 @@
+{
+  "repo": "summit-net-retry-forge",
+  "language": "TypeScript",
+  "category": "Networking",
+  "goal": "Design a TypeScript verification harness for retry systems, covering visual model generation, layout fixtures, and failure-oriented tests.",
+  "review_model": {
+    "terms": [
+      "packet span",
+      "retry pressure",
+      "route drift",
+      "socket risk"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "packet span",
+      "signal": 50,
+      "slack": 28,
+      "drag": 14,
+      "confidence": 64,
+      "score": 150,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "retry pressure",
+      "signal": 59,
+      "slack": 44,
+      "drag": 21,
+      "confidence": 62,
+      "score": 161,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "route drift",
+      "signal": 83,
+      "slack": 34,
+      "drag": 12,
+      "confidence": 74,
+      "score": 238,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "socket risk",
+      "signal": 89,
+      "slack": 25,
+      "drag": 18,
+      "confidence": 77,
+      "score": 226,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "packet span",
+      "signal": 67,
+      "slack": 40,
+      "drag": 25,
+      "confidence": 65,
+      "score": 164,
+      "lane": "ship"
+    }
+  ]
+}
